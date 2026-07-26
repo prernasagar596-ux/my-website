@@ -1,73 +1,85 @@
-window.onload = function () {
+const loader = document.getElementById("loader");
+const startBtn = document.getElementById("startBtn");
+const musicBtn = document.getElementById("musicBtn");
+const music = document.getElementById("bgMusic");
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const hearts = document.getElementById("hearts");
 
-    setTimeout(function () {
-
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("main").style.display = "block";
-
-    }, 3000);
-
+window.onload = () => {
+    setTimeout(() => {
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+    }, 1800);
 };
 
-function startSurprise() {
+startBtn.onclick = () => {
+    document.getElementById("scene1").scrollIntoView({
+        behavior: "smooth"
+    });
+};
 
-    document.getElementById("message").innerHTML = `
-    ❤️ Happy Birthday Bubu ❤️ <br><br>
+let playing = false;
 
-    Today is your special day. 🎂✨<br><br>
+musicBtn.onclick = () => {
+    if (playing) {
+        music.pause();
+        musicBtn.innerHTML = "🎵";
+    } else {
+        music.play();
+        musicBtn.innerHTML = "⏸";
+    }
+    playing = !playing;
+};
 
-    I wish your life is always filled with happiness,
-    love, success and countless beautiful memories. 💖<br><br>
+function createHeart() {
 
-    Thank you for being the most precious person in my life. 🌸<br><br>
+    let heart = document.createElement("div");
 
-    Stay happy...<br>
-    Stay blessed...<br>
-    Keep smiling forever... ❤️
-    `;
+    heart.className = "heart";
 
-    typeLetter();
+    heart.innerHTML = "❤️";
 
-}
+    heart.style.left = Math.random() * 100 + "%";
 
-function typeLetter(){
+    heart.style.fontSize = (20 + Math.random() * 30) + "px";
 
-    const text = `
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
 
-Dear Bubu ❤️,
+    hearts.appendChild(heart);
 
-Happy Birthday to the most beautiful soul.
-
-Every smile of yours makes my day brighter.
-
-Thank you for every beautiful memory.
-
-I pray that God always keeps you happy,
-healthy and successful.
-
-No matter what happens,
-you'll always have a very special place in my heart.
-
-Happy Birthday once again. ❤️🎂
-
-`;
-
-    let i = 0;
-
-    document.getElementById("letter").innerHTML = "";
-
-    let timer = setInterval(function(){
-
-        document.getElementById("letter").innerHTML += text.charAt(i);
-
-        i++;
-
-        if(i >= text.length){
-
-            clearInterval(timer);
-
-        }
-
-    },40);
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
 
 }
+
+setInterval(createHeart, 300);
+
+noBtn.addEventListener("mouseover", () => {
+
+    const x = Math.random() * (window.innerWidth - 150);
+
+    const y = Math.random() * (window.innerHeight - 80);
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+});
+
+yesBtn.onclick = () => {
+
+    for (let i = 0; i < 80; i++) {
+
+        setTimeout(createHeart, i * 60);
+
+    }
+
+    alert("💖 Yayyyyy!! I Love You Forever ❤️🥹");
+
+    document.querySelector(".ending").scrollIntoView({
+        behavior: "smooth"
+    });
+
+};
