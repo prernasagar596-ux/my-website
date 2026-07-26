@@ -1,85 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubu ❤️ Dudu</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
-<title>Happy Birthday Bubu ❤️</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <div id="loader">
-
-<h1>❤️</h1>
-
-<h2>Preparing Something Beautiful...</h2>
-
+    <h1>Loading Love...</h1>
 </div>
 
-<div id="main">
+<div id="hearts"></div>
 
-<h1 class="title">
-🎂 Happy Birthday
-<br>
-<span>Bubu ❤️</span>
-</h1>
+<div class="music-btn" id="musicBtn">
+    🎵
+</div>
 
-<p class="subtitle">
-30 July • The Most Special Day ✨
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <img src="images/bubu.png" class="bear">
+
+        <h1>
+            Bubu ❤️ Dudu
+        </h1>
+
+        <p>
+            Every heartbeat whispers your name...
+        </p>
+
+        <button id="startBtn">
+            Start Journey ❤️
+        </button>
+
+    </div>
+
+</section>
+
+<section class="scene" id="scene1">
+
+<div class="card">
+
+<h2>
+First Meet 🌸
+</h2>
+
+<p>
+The day everything changed forever...
 </p>
 
-<button onclick="startSurprise()">
-🎁 Open Your Surprise
+<img src="images/1.jpg">
+
+</div>
+
+</section>
+
+<section class="scene" id="scene2">
+
+<div class="card">
+
+<h2>
+Cute Memories 🥹
+</h2>
+
+<p>
+Every little moment with you became my favorite memory.
+</p>
+
+<img src="images/2.jpg">
+
+</div>
+
+</section>
+
+<section class="scene" id="scene3">
+
+<div class="card">
+
+<h2>
+Forever Together ❤️
+</h2>
+
+<p>
+No matter what happens,
+I always choose you.
+</p>
+
+<img src="images/3.jpg">
+
+</div>
+
+</section>
+
+<section class="scene" id="scene4">
+
+<div class="card">
+
+<h2>Our Smiles 😊</h2>
+
+<p>
+Your smile is my favorite place.
+</p>
+
+<img src="images/4.jpg">
+
+</div>
+
+</section>
+
+<section class="scene" id="scene5">
+
+<div class="card">
+
+<h2>Endless Love 💖</h2>
+
+<p>
+Every day with you feels like a beautiful dream.
+</p>
+
+<img src="images/5.jpg">
+
+</div>
+
+</section>
+
+<section class="scene" id="scene6">
+
+<div class="card">
+
+<h2>You're My Home 🏡</h2>
+
+<p>
+No matter where I go, my heart always finds you.
+</p>
+
+<img src="images/6.jpg">
+
+</div>
+
+</section>
+
+<section class="scene" id="scene7">
+
+<div class="card">
+
+<h2>Little Moments ✨</h2>
+
+<p>
+The smallest moments with you become the biggest memories.
+</p>
+
+<img src="images/7.jpg">
+
+</div>
+
+</section>
+
+<section class="scene" id="scene8">
+
+<div class="card">
+
+<h2>My Forever 🌹</h2>
+
+<p>
+I don't need a perfect life...
+I only need you.
+</p>
+
+<img src="images/8.jpg">
+
+</div>
+
+</section>
+
+<section class="proposal">
+
+<h1>Will You Stay With Me Forever? ❤️</h1>
+
+<div class="buttons">
+
+<button id="yesBtn">
+YES ❤️
 </button>
 
-<div id="message"></div>
-
-<section class="gallery">
-
-<h2>📸 Beautiful Memories</h2>
-
-<div class="photos">
-
-<img src="images/1.jpg.jpeg">
-<img src="images/2.jpg.jpeg">
-<img src="images/3.jpg.jpeg">
-<img src="images/4.jpg.jpeg">
-<img src="images/5.jpg.jpeg">
-<img src="images/6.jpg.jpeg">
-<img src="images/7.jpg.jpeg">
-<img src="images/8.jpg.jpeg">
+<button id="noBtn">
+NO 😜
+</button>
 
 </div>
 
 </section>
 
-<section class="letter">
+<section class="ending">
 
-<h2>💌 A Letter For You</h2>
+<h1>💖 I Love You Forever 💖</h1>
 
-<p id="letter"></p>
+<p>
+Made with ❤️ for my Bubu.
+</p>
 
 </section>
-
-<footer>
-Made with ❤️ only for Bubu
-</footer>
-
-</div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
